@@ -22,10 +22,6 @@ private slots:
 
     void on_zamknij_clicked();
 
-    void on_nl_clicked();
-
-    void on_np_clicked();
-
     void on_plus_clicked();
 
     void on_minus_clicked();
@@ -62,6 +58,16 @@ private slots:
 
     void on_lineEdit_textChanged(const QString &arg1);
 
+    void on_rowna_clicked();
+
+    void on_pznak_clicked();
+
+    void on_ln_clicked();
+
+    void on_log10_clicked();
+
+
+
 private:
     Ui::MainWindow *ui;
     enum operation
@@ -72,17 +78,26 @@ private:
         mnozenie,
         dzielenie,
         potega,
-        sqrt,
+        pierwiastek,
+        logarytm,
+        logarytm10,
         none
 
+
     };
+    void wyswietliczbe (QString Text);
+
 
     double left;
     double right;
     int liczba;
-    double pamiec;
     bool przecinek;
     bool lewy;
     bool prawy;
+    bool czyszczenie;
+    bool znak;
+
+
 };
 #endif // MAINWINDOW_H
+

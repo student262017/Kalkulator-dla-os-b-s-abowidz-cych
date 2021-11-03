@@ -1,16 +1,16 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include <math.h>
+#include <cmath>
+#include <cstdlib>
+
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
+
 {
     ui->setupUi(this);
-    left =0;
-    right =0;
-    przecinek = false;
-    pamiec = 0;
-    liczba = this->operation::none;
 
 }
 
@@ -32,185 +32,193 @@ void MainWindow::on_zamknij_clicked()
 }
 
 
-void MainWindow::on_nl_clicked()
+void MainWindow::on_ln_clicked()
 {
-    QString text = ui->lineEdit->text();
-    if(text == "(") return;
+    if(!lewy)
+    {
+        lewy = true;
+        left= ui->lineEdit->text().toDouble();
 
-    text.append ("(");
-    ui->lineEdit->setText(text);
+        czyszczenie= true;
+    }
+    liczba = logarytm;
 }
 
 
-void MainWindow::on_np_clicked()
-{
-    QString text = ui->lineEdit->text();
-    if(text == ")") return;
 
-    text.append (")");
-    ui->lineEdit->setText(text);
+void MainWindow::on_log10_clicked()
+{
+    if(!lewy)
+    {
+        lewy = true;
+        left= ui->lineEdit->text().toDouble();
+
+        czyszczenie= true;
+    }
+    liczba = logarytm10;
 }
 
 
 void MainWindow::on_plus_clicked()
 {
-
-if(!(prawy && lewy) )return;
-double dodawanie;
-
-switch (liczba)
+if(!lewy)
 {
-case plus:
-dodawanie = prawy + lewy;
-    break;
+    lewy = true;
+    left= ui->lineEdit->text().toDouble();
+
+    czyszczenie= true;
 }
-ui->lineEdit->setText(QString::number(dodawanie));
+liczba = plus;
 }
 
 
 void MainWindow::on_minus_clicked()
 {
+    if(!lewy)
+    {
+        lewy = true;
+        left= ui->lineEdit->text().toDouble();
 
-}
+        czyszczenie= true;
+    }
+    liczba = minus;
+    }
+
 
 
 void MainWindow::on_mnozenie_clicked()
 {
+    if(!lewy)
+    {
+        lewy = true;
+        left= ui->lineEdit->text().toDouble();
+
+        czyszczenie= true;
+    }
+    liczba = mnozenie;
 
 }
 
-
 void MainWindow::on_dzielenie_clicked()
 {
+    if(!lewy)
+    {
+        lewy = true;
+        left= ui->lineEdit->text().toDouble();
+
+        czyszczenie= true;
+    }
+    liczba = dzielenie;
 
 }
 
 
 void MainWindow::on_potega_clicked()
 {
+    if(!lewy)
+    {
+        lewy = true;
+        left= ui->lineEdit->text().toDouble();
 
+        czyszczenie= true;
+    }
+    liczba = potega;
 }
 
 
 void MainWindow::on_sqrt_clicked()
 {
+    if(!lewy)
+    {
+        lewy = true;
+        left= ui->lineEdit->text().toDouble();
 
+        czyszczenie= true;
+    }
+    liczba = pierwiastek;
 }
 
 
 void MainWindow::on_p0_clicked()
 {
-QString text = ui->lineEdit->text();
-if(text == "0") return;
-
-text.append ("0");
-ui->lineEdit->setText(text);
+    wyswietliczbe("0");
 }
 
 
 
 void MainWindow::on_p1_clicked()
 {
-    QString text = ui->lineEdit->text();
-    if(text == "1") return;
-
-    text.append ("1");
-    ui->lineEdit->setText(text);
+    wyswietliczbe ("1");
 }
 
 
 void MainWindow::on_p2_clicked()
 {
-    QString text = ui->lineEdit->text();
-    if(text == "2") return;
-
-    text.append ("2");
-    ui->lineEdit->setText(text);
+    wyswietliczbe ("2");
 }
 
 
 void MainWindow::on_p3_clicked()
 {
-    QString text = ui->lineEdit->text();
-    if(text == "3") return;
-
-    text.append ("3");
-    ui->lineEdit->setText(text);
+     wyswietliczbe ("3");
 }
 
 
 void MainWindow::on_p4_clicked()
 {
-    QString text = ui->lineEdit->text();
-    if(text == "4") return;
-
-    text.append ("4");
-    ui->lineEdit->setText(text);
+     wyswietliczbe ("4");
 }
 
 
 void MainWindow::on_p5_clicked()
 {
-    QString text = ui->lineEdit->text();
-    if(text == "5") return;
-
-    text.append ("5");
-    ui->lineEdit->setText(text);
+     wyswietliczbe ("5");
 }
 
 
 void MainWindow::on_p6_clicked()
 {
-    QString text = ui->lineEdit->text();
-    if(text == "6") return;
-
-    text.append ("6");
-    ui->lineEdit->setText(text);
+    wyswietliczbe("6");
 }
 
 
 void MainWindow::on_p7_clicked()
 {
-    QString text = ui->lineEdit->text();
-    if(text == "7") return;
-
-    text.append ("7");
-    ui->lineEdit->setText(text);
+    wyswietliczbe ("7");
 }
 
 
 void MainWindow::on_p8_clicked()
 {
-    QString text = ui->lineEdit->text();
-    if(text == "8") return;
-
-    text.append ("8");
-    ui->lineEdit->setText(text);
+    wyswietliczbe ("8");
 }
 
 
 void MainWindow::on_p9_clicked()
 {
-    QString text = ui->lineEdit->text();
-    if(text == "9") return;
-
-    text.append ("9");
-    ui->lineEdit->setText(text);
+    wyswietliczbe ("9");
 }
 
 
 void MainWindow::on_przecinek_clicked()
 {
-    QString text = ui->lineEdit->text();
-    if(text == ",") return;
+    if(przecinek == true) return;
 
-    text.append (",");
-    ui->lineEdit->setText(text);
+    ui->lineEdit->setText(ui->lineEdit->text().append("."));
+    przecinek = true;
 }
 
 
 void MainWindow::on_pC_clicked()
 {
+    left =0;
+    right =0;
+    przecinek = false;
+    lewy = false;
+    prawy = false;
+    czyszczenie= false;
+    znak = false;
+
 
 ui->lineEdit->clear();
 }
@@ -221,4 +229,82 @@ void MainWindow::on_lineEdit_textChanged(const QString &arg1)
 
 }
 
+void MainWindow::on_rowna_clicked()
+{
+    if(!(lewy))return;
+    right = ui->lineEdit->text().toDouble();
+    double dzialanie;
+
+    switch (liczba)
+    {
+    case plus:
+    dzialanie = left + right;
+        break;
+
+    case minus:
+        dzialanie = left - right;
+        break;
+        \
+    case mnozenie:
+        dzialanie = left * right;
+        break;
+
+    case dzielenie:
+
+        dzialanie = left / right;
+        break;
+
+    case pierwiastek:
+        dzialanie = sqrt ( left);
+        break;
+
+    case potega:
+        dzialanie = pow( left, right);
+        break;
+
+    case logarytm:
+        dzialanie =  log (left);
+        break;
+
+    case logarytm10:
+        dzialanie = log10 (left);
+        break;
+    }
+
+
+
+    czyszczenie = true;
+    ui->lineEdit->setText(QString::number(dzialanie));
+    left = 0;
+    right = 0;
+    right = false;
+    left = false;
+
+
+
+}
+
+void MainWindow::wyswietliczbe(QString Text)
+{
+    QString text = ui->lineEdit->text();
+    if (text.length() >= ui->lineEdit->maxLength()) return;
+
+if (czyszczenie)
+{
+text.clear();
+czyszczenie = false;
+}
+
+     text.append (Text);
+     ui->lineEdit->setText(text);
+}
+
+
+void MainWindow::on_pznak_clicked()
+{
+    if(znak == true) return;
+
+    ui->lineEdit->setText(ui->lineEdit->text().append("-"));
+    znak = true;
+}
 
