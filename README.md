@@ -1,3 +1,3 @@
 # Kalkulator-dla-os-b-s-abowidz-cych
 W moim projekcie chciałbym stworzyć specjalny kalkulator dla osób niepełnosprawnych. Przyciski mają być dobrze widoczne, odpowiednio pogrupowane. Niestety z problemów technicznych ni eudało mi się zaimplementowac możliwości wydawania dzwieku, ponieważ klasy za to odpowiedzialne nie są się zaimementować poprawnie. Zamiast tego będzie coś w rodzaju przeglądarki zdjęć i obrazów. Kalkulator będzie składał się z dwóch klawiatur oraz z dużego wyświetlacza. Na jednej klawiaturze są cyfry, na drugiej znaki matematyczne pogrupowane antagonistycznie. Są również zaawansowane operacje metametyczne, a także dwie zane stałe matematyczne. 
-Ze względu na to, że jest to kalkulator dla osób słabowidzących to wszelkie przyciski i obrazy mają być wyrazne i czytelne i w odpowiednim kolorze.
+Ze względu na przeznaczenie kalkulatora ważne jest, aby wszelkie przyciski i obrazy mają być wyrazne i czytelne i w odpowiednim kolorze.
