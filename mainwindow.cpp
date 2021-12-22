@@ -10,6 +10,7 @@
 #include <QFile>
 #include <QFileDialog>
 #include <QPixmap>
+#include <fstream>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -344,6 +345,9 @@ void MainWindow::on_pC_clicked()
        czyszczenie= false;
 
 ui->lineEdit->clear();
+ui->tytul->clear();
+ui->wyswietlacz->items().clear();
+
 }
 
 
@@ -375,7 +379,7 @@ void MainWindow::on_rowna_clicked()
 
         case dzielenie:
 
-        dzialanie = pierwszaliczba / drugaliczba;
+                   dzialanie = pierwszaliczba / drugaliczba;
 
              break;
         case pierwiastek:
@@ -496,12 +500,111 @@ czyszczenie = false;
 
 void MainWindow::on_zdjecia_clicked()
 {
-    QString zdjecie =  QFileDialog::getOpenFileName(this, tr("Otwórz plik"), "C:/Users/Damian/Documents/Qt- projekt/kalkulator/Zdjęcia i obrazy", tr("Obrazy (*.jpg .png .bmp)"));
-    QFile plik(zdjecie);
-    QString sciezka = plik.fileName();
-    QGraphicsScene *scena = new QGraphicsScene(ui->wyswietlacz);
-    QPixmap mapaPikseli(zdjecie);
-    scena->addPixmap(mapaPikseli);
-    ui->wyswietlacz->setScene(scena);
-    ui->wyswietlacz->show();
+    QString zdjecie = "C:/Users/Damian/Documents/Qt- projekt/kalkulator/Zdjęcia i obrazy/Hydrangeas.jpg";
+        QFile plik(zdjecie);
+        ui->tytul->setText("Nazwa zdjęcia:");
+        ui->lineEdit->setText("Hydrangeas");
+        QGraphicsScene *obraz = new QGraphicsScene(ui->wyswietlacz);
+        QPixmap mapaPikseli(zdjecie);
+        obraz->addPixmap(mapaPikseli);
+        ui->wyswietlacz->setScene(obraz);
+        ui->wyswietlacz->show();
 }
+
+void MainWindow::on_pushButton_clicked()
+{
+    QString zdjecie = "C:/Users/Damian/Documents/Qt- projekt/kalkulator/Zdjęcia i obrazy/Desert.jpg";
+        QFile plik(zdjecie);
+        ui->tytul->setText("Nazwa zdjęcia:");
+        ui->lineEdit->setText("Pustynia");
+        QGraphicsScene *obraz = new QGraphicsScene(ui->wyswietlacz);
+        QPixmap mapaPikseli(zdjecie);
+        obraz->addPixmap(mapaPikseli);
+        ui->wyswietlacz->setScene(obraz);
+        ui->wyswietlacz->show();
+}
+
+
+void MainWindow::on_pushButton_2_clicked()
+{
+    QString zdjecie = "C:/Users/Damian/Documents/Qt- projekt/kalkulator/Zdjęcia i obrazy/Lighthouse.jpg";
+        QFile plik(zdjecie);
+        ui->tytul->setText("Nazwa zdjęcia:");
+        ui->lineEdit->setText("Latarnia morska");
+        QGraphicsScene *obraz = new QGraphicsScene(ui->wyswietlacz);
+        QPixmap mapaPikseli(zdjecie);
+        obraz->addPixmap(mapaPikseli);
+        ui->wyswietlacz->setScene(obraz);
+        ui->wyswietlacz->show();
+}
+
+void MainWindow::on_pushButton_3_clicked()
+{
+    QString zdjecie = "C:/Users/Damian/Documents/Qt- projekt/kalkulator/Zdjęcia i obrazy/Chrysanthemum.jpg";
+        QFile plik(zdjecie);
+        ui->tytul->setText("Nazwa zdjęcia:");
+        ui->lineEdit->setText("Chryzantemy");
+        QGraphicsScene *obraz = new QGraphicsScene(ui->wyswietlacz);
+        QPixmap mapaPikseli(zdjecie);
+        obraz->addPixmap(mapaPikseli);
+        ui->wyswietlacz->setScene(obraz);
+        ui->wyswietlacz->show();
+}
+
+
+void MainWindow::on_pushButton_4_clicked()
+{
+    QString zdjecie = "C:/Users/Damian/Documents/Qt- projekt/kalkulator/Zdjęcia i obrazy/Jellyfish.jpg";
+        QFile plik(zdjecie);
+        ui->tytul->setText("Nazwa zdjęcia:");
+        ui->lineEdit->setText("Meduza");
+        QGraphicsScene *obraz = new QGraphicsScene(ui->wyswietlacz);
+        QPixmap mapaPikseli(zdjecie);
+        obraz->addPixmap(mapaPikseli);
+        ui->wyswietlacz->setScene(obraz);
+        ui->wyswietlacz->show();
+}
+
+
+
+void MainWindow::on_pushButton_5_clicked()
+{
+    QString zdjecie = "C:/Users/Damian/Documents/Qt- projekt/kalkulator/Zdjęcia i obrazy/Koala.jpg";
+        QFile plik(zdjecie);
+        ui->tytul->setText("Nazwa zdjęcia:");
+        ui->lineEdit->setText("Koala");
+        QGraphicsScene *obraz = new QGraphicsScene(ui->wyswietlacz);
+        QPixmap mapaPikseli(zdjecie);
+        obraz->addPixmap(mapaPikseli);
+        ui->wyswietlacz->setScene(obraz);
+        ui->wyswietlacz->show();
+}
+
+
+void MainWindow::on_pushButton_6_clicked()
+{
+    QString zdjecie = "C:/Users/Damian/Documents/Qt- projekt/kalkulator/Zdjęcia i obrazy/Penguins.jpg";
+        QFile plik(zdjecie);
+        ui->tytul->setText("Nazwa zdjęcia:");
+        ui->lineEdit->setText("Pingwiny");
+        QGraphicsScene *obraz = new QGraphicsScene(ui->wyswietlacz);
+        QPixmap mapaPikseli(zdjecie);
+        obraz->addPixmap(mapaPikseli);
+        ui->wyswietlacz->setScene(obraz);
+        ui->wyswietlacz->show();
+}
+
+
+void MainWindow::on_pushButton_7_clicked()
+{
+    QString zdjecie = "C:/Users/Damian/Documents/Qt- projekt/kalkulator/Zdjęcia i obrazy/Tulips.jpg";
+        QFile plik(zdjecie);
+        ui->tytul->setText("Nazwa zdjęcia:");
+        ui->lineEdit->setText("Tulipany");
+        QGraphicsScene *obraz = new QGraphicsScene(ui->wyswietlacz);
+        QPixmap mapaPikseli(zdjecie);
+        obraz->addPixmap(mapaPikseli);
+        ui->wyswietlacz->setScene(obraz);
+        ui->wyswietlacz->show();
+}
+
