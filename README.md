@@ -1,2 +1,2 @@
-# Kalkulator-dla-os-b-s-abowidz-cych
+# Kalkulator z miniprzeglądarką zdjęć
 W moim projekcie stworzyłem specjalny kalkulator dla osób niepełnosprawnych wraz z mini przeglądarką zdjęć, ale głównie jest on przeznaczony dla osób słabosłyszących. Z tego względu przyciski są odpowiednio oznaczone i dobrze widoczne z właściwą czcionką (kursywa, pogrubienie itp.). Kalkulator składa się z następujących klawiatur: cyfr, operacji matematycznych oraz ponumerowanych przycisków wywołujących zdjęcia na dużym wyświetlaczu oraz z dwóch mniejszych wyświetlaczy informujących o tytule zdjęcia. Zdjęcia są wczytywane z folderu.
