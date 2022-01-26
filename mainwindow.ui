@@ -986,8 +986,8 @@
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>470</x>
-      <y>720</y>
+      <x>390</x>
+      <y>710</y>
       <width>221</width>
       <height>71</height>
      </rect>
@@ -1008,8 +1008,8 @@
    <widget class="QPushButton" name="wyczysc">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>870</y>
+      <x>130</x>
+      <y>900</y>
       <width>491</width>
       <height>101</height>
      </rect>
@@ -1028,10 +1028,10 @@
    <widget class="QWidget" name="gridLayoutWidget_4">
     <property name="geometry">
      <rect>
-      <x>510</x>
-      <y>800</y>
-      <width>191</width>
-      <height>91</height>
+      <x>389</x>
+      <y>780</y>
+      <width>201</width>
+      <height>120</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout_4">
@@ -1155,10 +1155,10 @@
    <widget class="QGraphicsView" name="wyswietlacz">
     <property name="geometry">
      <rect>
-      <x>700</x>
+      <x>670</x>
       <y>430</y>
-      <width>831</width>
-      <height>571</height>
+      <width>881</width>
+      <height>601</height>
      </rect>
     </property>
    </widget>

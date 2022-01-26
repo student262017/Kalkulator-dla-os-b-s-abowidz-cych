@@ -335,7 +335,6 @@ void MainWindow::on_cos_clicked()
 
 void MainWindow::on_tan_clicked()
 {
-
     if(!lewy)
     {
         lewy = true;
@@ -349,81 +348,62 @@ void MainWindow::on_tan_clicked()
 
 void MainWindow::on_euler_clicked()
 {
-
-    QString text = ui->lineEdit->text();
-if (czyszczenie)
-{
-text.clear();
-czyszczenie = false;
-}
-     text.append ("2.71828182");
-     ui->lineEdit->setText(text);
+   znaki ("2.71828182");
 }
 
 void MainWindow::on_liczbapi_clicked()
 {
-
-    QString text = ui->lineEdit->text();
-
-if (czyszczenie)
-{
-text.clear();
-czyszczenie = false;
-}
-     text.append ("3.1415926");
-     ui->lineEdit->setText(text);
+znaki ("3.1415926");
 }
 
 void MainWindow::on_zdjecia_clicked()
 {
-     proba("C:/Users/Damian/Documents/Qt- projekt/kalkulator/Zdjęcia i obrazy/Hydrangeas.jpg", "Hortensje");
+     zdjecie_z_tytulem("C:/Users/Damian/Documents/Qt- projekt/kalkulator/Zdjęcia i obrazy/Hydrangeas.jpg", "Hortensje");
 }
 
 void MainWindow::on_pushButton_clicked()
 {
 
-    proba("C:/Users/Damian/Documents/Qt- projekt/kalkulator/Zdjęcia i obrazy/Desert.jpg", "Pustynia");
+   zdjecie_z_tytulem("C:/Users/Damian/Documents/Qt- projekt/kalkulator/Zdjęcia i obrazy/Desert.jpg", "Pustynia");
 }
 
 void MainWindow::on_pushButton_2_clicked()
 {
-    proba ("C:/Users/Damian/Documents/Qt- projekt/kalkulator/Zdjęcia i obrazy/Lighthouse.jpg", "Latarnia Morska");
+    zdjecie_z_tytulem ("C:/Users/Damian/Documents/Qt- projekt/kalkulator/Zdjęcia i obrazy/Lighthouse.jpg", "Latarnia Morska");
 }
 
 void MainWindow::on_pushButton_3_clicked()
 {
-    proba("C:/Users/Damian/Documents/Qt- projekt/kalkulator/Zdjęcia i obrazy/Chrysanthemum.jpg", "Chryzantemy");
+    zdjecie_z_tytulem("C:/Users/Damian/Documents/Qt- projekt/kalkulator/Zdjęcia i obrazy/Chrysanthemum.jpg", "Chryzantemy");
 }
 
 void MainWindow::on_pushButton_4_clicked()
 {
-    proba("C:/Users/Damian/Documents/Qt- projekt/kalkulator/Zdjęcia i obrazy/Jellyfish.jpg", "Meduzy");
+    zdjecie_z_tytulem("C:/Users/Damian/Documents/Qt- projekt/kalkulator/Zdjęcia i obrazy/Jellyfish.jpg", "Meduzy");
 }
 
 void MainWindow::on_pushButton_5_clicked()
 {
-     proba("C:/Users/Damian/Documents/Qt- projekt/kalkulator/Zdjęcia i obrazy/Koala.jpg", "Koala");
+     zdjecie_z_tytulem("C:/Users/Damian/Documents/Qt- projekt/kalkulator/Zdjęcia i obrazy/Koala.jpg", "Koala");
 }
 
 void MainWindow::on_pushButton_6_clicked()
 {
-    proba("C:/Users/Damian/Documents/Qt- projekt/kalkulator/Zdjęcia i obrazy/Penguins.jpg", "Pingwiny");
+    zdjecie_z_tytulem("C:/Users/Damian/Documents/Qt- projekt/kalkulator/Zdjęcia i obrazy/Penguins.jpg", "Pingwiny");
 }
 
 void MainWindow::on_pushButton_7_clicked()
 {
-    proba("C:/Users/Damian/Documents/Qt- projekt/kalkulator/Zdjęcia i obrazy/Tulips.jpg", "Tupilany");
+    zdjecie_z_tytulem("C:/Users/Damian/Documents/Qt- projekt/kalkulator/Zdjęcia i obrazy/Tulips.jpg", "Tupilany");
 }
 
-void MainWindow::proba(QString grafika, QString tytyl)
+void MainWindow::zdjecie_z_tytulem(QString grafika, QString tytyl)
 {
     ui->tytul->setText("Nazwa zdjęcia:");
     ui->lineEdit->setText(tytyl);
 
-    QString zdjecie=grafika;
-    QFile plik(zdjecie);
     QGraphicsScene *obraz = new QGraphicsScene(ui->wyswietlacz);
-    QPixmap mapaPikseli(zdjecie);
+    QPixmap mapaPikseli(grafika);
     obraz->addPixmap(mapaPikseli);
     ui->wyswietlacz->setScene(obraz);
     ui->wyswietlacz->show();

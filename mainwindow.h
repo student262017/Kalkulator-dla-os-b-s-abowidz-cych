@@ -93,10 +93,9 @@ private slots:
 
     void on_pushButton_7_clicked();
 
-    void proba(QString grafika, QString tytyl);
+    void zdjecie_z_tytulem(QString grafika, QString tytyl);
 
     void znaki(QString liczba);
-
 
     void on_wyczysc_clicked();
 
